@@ -1,0 +1,38 @@
+{
+  "name": "repo-depot",
+  "description": "Grabs information about your Github repos",
+  "version": "0.1.0",
+  "homepage": "https://github.com/filamentgroup/repo-depot",
+  "author": {
+    "name": "Jeffrey Lembeck",
+    "email": "hello@filamentgroup.com",
+    "url": "http://www.filamentgroup.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/filamentgroup/repo-depot"
+  },
+  "bugs": {
+    "url": "https://github.com/filamentgroup/repo-depot/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/filamentgroup/repo-depot/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/repo-depot",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "scripts": {
+    "test": "grunt nodeunit"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt": "~0.4.2"
+  },
+  "keywords": []
+}
