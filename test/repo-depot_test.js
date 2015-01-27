@@ -1,6 +1,5 @@
 'use strict';
 
-var repo_depot = require('../lib/repo-depot.js');
 
 /*
   ======== A Handy Little Nodeunit Reference ========
@@ -22,7 +21,7 @@ var repo_depot = require('../lib/repo-depot.js');
     test.ifError(value)
 */
 
-exports['awesome'] = {
+exports['non-functioning'] = {
   setUp: function(done) {
     // setup here
     done();
@@ -30,7 +29,7 @@ exports['awesome'] = {
   'no args': function(test) {
     test.expect(1);
     // tests here
-    test.equal(repo_depot.awesome(), 'awesome', 'should be awesome.');
+    test.ok(true);
     test.done();
   },
 };
