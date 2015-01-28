@@ -46,9 +46,10 @@ exports['issues'] = {
   '_read makes new call when no page is present': function(test) {
     test.expect(1);
 
-    this.stream.on('data', function() {
+    // TODO remove the push mocks and just use streams
+    this.stream.push = function() {
        test.ok(false, "read should not call push");
-    });
+    };
 
     this.stream._initialPage = function() {
       test.ok(true, "test should make a client call");
@@ -61,8 +62,9 @@ exports['issues'] = {
   '_read pushes item if page has one': function(test) {
     test.expect(1);
 
-    this.stream.page = ['baz'];
+    this.stream._page = ['baz'];
 
+    // TODO remove the push mocks and just use streams
     this.stream.push = function( issue ) {
       test.equal(issue, "baz");
       test.done();
@@ -74,7 +76,7 @@ exports['issues'] = {
   '_read grabs the next page if page is empty': function(test) {
     test.expect(1);
 
-    this.stream.page = [];
+    this.stream._page = [];
 
     this.stream._nextPage = function() {
       test.ok(true);
