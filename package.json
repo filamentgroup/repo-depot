@@ -35,7 +35,8 @@
     "grunt": "~0.4.2",
     "split": "",
     "github": "",
-    "nodeunit": ""
+    "nodeunit": "",
+    "q": ""
   },
   "keywords": []
 }
