@@ -1,7 +1,7 @@
 'use strict';
 
 // relative to the nodeunit binary?
-var streams = require('../../lib/github/streams');
+var streams = require('../../../lib/github/streams');
 
 /*
   ======== A Handy Little Nodeunit Reference ========
@@ -36,6 +36,21 @@ exports['issues'] = {
       test.done();
     };
 
-    this.stream._newPage({}, undefined);
+    this.stream._newPage("fake error object", undefined);
+  },
+
+  '_read makes new call when no page is present': function(test) {
+    test.expect(1);
+
+    this.stream.push = function() {
+       test.ok(false, "read should not call push");
+    };
+
+    this.stream._clientCall = function() {
+      test.ok(true, "test should make a client call");
+      test.done()
+    };
+
+    this.stream._read();
   }
 };
