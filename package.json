@@ -36,7 +36,8 @@
     "split": "",
     "github": "",
     "nodeunit": "",
-    "rsvp": ""
+    "rsvp": "",
+    "yargs": ""
   },
   "keywords": []
 }
