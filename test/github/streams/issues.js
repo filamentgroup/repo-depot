@@ -25,7 +25,10 @@ var streams = require('../../../lib/github/streams');
 
 exports['issues'] = {
   setUp: function(done) {
-    this.stream = new streams.Issues("foo", "bar");
+    this.stream = new streams.Issues({
+      user: "foo",
+      repo: "bar"
+    });
 
     this.stream._nextPage = this.stream._initialPage = function() {};
 
