@@ -22,6 +22,6 @@ echo -n filamentgroup | node bin/run.js repos list | node bin/run.js issues open
 # Check the files at in the root of `master` g against a specified list
 diff \
   <(echo -n "filamentgroup/shoestring" | node bin/run.js filenames list | sort) \
-  <(cat requiredgs.txt | sort)\
+  <(cat required.txt | sort)\
   | grep ">"
-```
+```g
