@@ -19,9 +19,9 @@ echo -n filamentgroup | node bin/run.js repos list | node bin/run.js issues open
 ## Advanced commands
 
 ```
-# Check the files at in the root of `master`  against a specified list
+# Check the files at in the root of `master` g against a specified list
 diff \
   <(echo -n "filamentgroup/shoestring" | node bin/run.js filenames list | sort) \
-  <(cat /tmp/check.txt | sort)\
+  <(cat required.txt | sort)\
   | grep ">"
 ``
