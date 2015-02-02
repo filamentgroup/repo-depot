@@ -24,4 +24,4 @@ diff \
   <(echo -n "filamentgroup/shoestring" | node bin/run.js filenames list | sort) \
   <(cat required.txt | sort)\
   | grep ">"
-```g
+```
