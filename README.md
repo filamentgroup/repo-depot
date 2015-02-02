@@ -1,27 +1,17 @@
-# repo-depot [![Build Status](https://secure.travis-ci.org/filamentgroup/repo-depot.png?branch=master)](http://travis-ci.org/filamentgroup/repo-depot)
+# repo-depot
 
-Grabs information about your Github repos
+Grabs information about your Github repos.
 
 ## Getting Started
-Install the module with: `npm install repo-depot`
 
-```javascript
-var repo_depot = require('repo-depot');
-repo_depot.awesome(); // "awesome"
+Install dependencies with: `npm install`
+
+## Sample commands
+
 ```
+# List all repos
+echo -n filamentgroup | node bin/run.js repos list
 
-## Documentation
-_(Coming soon)_
-
-## Examples
-_(Coming soon)_
-
-## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
-
-## Release History
-_(Nothing yet)_
-
-## License
-Copyright (c) 2015 Jeffrey Lembeck  
-Licensed under the MIT license.
+# List number of open issues per repo
+echo -n filamentgroup | node bin/run.js repos list | node bin/run.js issues open
+```
