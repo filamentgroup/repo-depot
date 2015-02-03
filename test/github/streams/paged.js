@@ -73,5 +73,49 @@ exports['paged'] = {
     test.deepEqual(this.stream._page, []);
     test.deepEqual(this.stream._cache, [ 'foo', 'bar' ]);
     test.done();
+  },
+
+  '_nextPage shouldnt get the next page when cache is complete': function(test) {
+    test.expect(1);
+
+    // reset
+    this.stream._nextPage = Paged.prototype._nextPage;
+
+    this.stream._client = {
+      hasNextPage: function() {
+        return true;
+      },
+
+      getNextPage: function() {
+        test.ok(false, "shouldn't be called when cache is complete");
+      }
+    };
+
+    this.stream._cachingComplete = true;
+    this.stream.push = function(pushed) {
+      test.equal(pushed, null);
+    };
+
+    this.stream._nextPage();
+    test.done();
+  },
+
+  '_nextPage marks caching complete': function(test) {
+    test.expect(1);
+
+    // reset
+    this.stream._nextPage = Paged.prototype._nextPage;
+
+    this.stream._client = {
+      hasNextPage: function() {
+        return false;
+      }
+    };
+
+    this.stream._cachingComplete = false;
+
+    this.stream._nextPage();
+    test.ok(this.stream._cachingComplete);
+    test.done();
   }
 };
