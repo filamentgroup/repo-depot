@@ -4,10 +4,7 @@ var Paged = require('../../../lib/github/streams/paged').Paged;
 
 exports['paged'] = {
   setUp: function(done) {
-    this.stream = new Paged({
-      user: "foo",
-      repo: "bar"
-    });
+    this.stream = new Paged({});
 
     this.stream.push = this.stream._nextPage = this.stream._initialPage = function() {};
 
@@ -77,6 +74,4 @@ exports['paged'] = {
     test.deepEqual(this.stream._cache, [ 'foo', 'bar' ]);
     test.done();
   }
-
-
 };
