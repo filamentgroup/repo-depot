@@ -1,27 +1,6 @@
 'use strict';
 
-// relative to the nodeunit binary?
 var Paged = require('../../../lib/github/streams/paged').Paged;
-
-/*
-  ======== A Handy Little Nodeunit Reference ========
-  https://github.com/caolan/nodeunit
-
-  Test methods:
-    test.expect(numAssertions)
-    test.done()
-  Test assertions:
-    test.ok(value, [message])
-    test.equal(actual, expected, [message])
-    test.notEqual(actual, expected, [message])
-    test.deepEqual(actual, expected, [message])
-    test.notDeepEqual(actual, expected, [message])
-    test.strictEqual(actual, expected, [message])
-    test.notStrictEqual(actual, expected, [message])
-    test.throws(block, [error], [message])
-    test.doesNotThrow(block, [error], [message])
-    test.ifError(value)
-*/
 
 exports['paged'] = {
   setUp: function(done) {
@@ -30,7 +9,7 @@ exports['paged'] = {
       repo: "bar"
     });
 
-    this.stream._nextPage = this.stream._initialPage = function() {};
+    this.stream.push = this.stream._nextPage = this.stream._initialPage = function() {};
 
     done();
   },
@@ -87,5 +66,17 @@ exports['paged'] = {
     };
 
     this.stream._read();
+  },
+
+  '_read caches each element': function(test) {
+    this.stream._page = [ 'foo', 'bar' ];
+    this.stream._read();
+    this.stream._read();
+
+    test.deepEqual(this.stream._page, []);
+    test.deepEqual(this.stream._cache, [ 'foo', 'bar' ]);
+    test.done();
   }
+
+
 };
