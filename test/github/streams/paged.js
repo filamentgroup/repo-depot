@@ -1,7 +1,7 @@
 'use strict';
 
 // relative to the nodeunit binary?
-var streams = require('../../../lib/github/streams');
+var Paged = require('../../../lib/github/streams/paged').Paged;
 
 /*
   ======== A Handy Little Nodeunit Reference ========
@@ -23,9 +23,9 @@ var streams = require('../../../lib/github/streams');
     test.ifError(value)
 */
 
-exports['issues'] = {
+exports['paged'] = {
   setUp: function(done) {
-    this.stream = new streams.Issues({
+    this.stream = new Paged({
       user: "foo",
       repo: "bar"
     });
