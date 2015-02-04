@@ -41,7 +41,8 @@
     "rsvp": "",
     "semver": "^4.2.0",
     "split": "",
-    "yargs": ""
+    "yargs": "",
+    "mustache": ""
   },
   "keywords": []
 }
