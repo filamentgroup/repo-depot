@@ -37,12 +37,13 @@
     "grunt-contrib-jshint": "~0.6.4",
     "grunt-contrib-nodeunit": "~0.2.0",
     "grunt-contrib-watch": "~0.5.3",
+    "mustache": "",
     "nodeunit": "",
+    "npm": "^2.4.1",
     "rsvp": "",
     "semver": "^4.2.0",
     "split": "",
-    "yargs": "",
-    "mustache": ""
+    "yargs": ""
   },
   "keywords": []
 }
