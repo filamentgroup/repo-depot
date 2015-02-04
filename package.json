@@ -21,6 +21,9 @@
       "url": "https://github.com/filamentgroup/repo-depot/blob/master/LICENSE-MIT"
     }
   ],
+  "bin": {
+    "repo-depot": "./bin/run.js"
+  },
   "main": "lib/repo-depot",
   "engines": {
     "node": ">= 0.10.0"
