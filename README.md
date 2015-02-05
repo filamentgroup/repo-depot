@@ -26,7 +26,13 @@ diff \
   | grep ">"
 
 # Get the author in package.json
-sha=$(echo -n "filamentgroup/shoestring/package.json" | node bin/run.js files json | jq .sha)
-echo -n "filamentgroup/shoestring/$sha" | node bin/run.js blob out | jq .author.name
+sha=$(
+  echo -n "filamentgroup/shoestring/package.json" \
+  | node bin/run.js files json \
+  | jq .sha
+);
 
+echo -n "filamentgroup/shoestring/$sha" \
+  | node bin/run.js blob out
+  | jq .author.name
 ```
