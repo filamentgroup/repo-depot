@@ -33,6 +33,6 @@ sha=$(
 );
 
 echo -n "filamentgroup/shoestring/$sha" \
-  | node bin/run.js blob out
+  | node bin/run.js blob out \
   | jq .author.name
 ```
