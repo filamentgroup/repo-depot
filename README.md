@@ -14,6 +14,9 @@ echo -n filamentgroup | node bin/run.js repos list
 
 # List number of open issues per repo
 echo -n filamentgroup | node bin/run.js repos list | node bin/run.js issues open
+
+# List the newest published package version from npm
+echo -n tablesaw | node bin/run.js npmversion list
 ```
 
 ## Advanced commands
