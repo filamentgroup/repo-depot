@@ -1,3 +1,5 @@
+:warning: This project is archived and the repository is no longer maintained.
+
 # repo-depot
 
 Grabs information about your Github repos.
